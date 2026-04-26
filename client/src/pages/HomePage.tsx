@@ -3,21 +3,20 @@ import Button from '../components/Button'
 
 export default function HomePage() {
   return (
-    <section className="bg-[linear-gradient(95deg,#739aa8_0%,#7fadbb_19%,#aac9d7_63%,#7fa5b5_100%)] py-16 md:py-24">
+    <section className="bg-[linear-gradient(95deg,#739aa8_0%,#7fadbb_19%,#aac9d7_63%,#7fa5b5_100%)] py-10 md:py-24">
       {/* Hero Section */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
           <div>
-            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-6">
-              <span className="text-xs font-semibold uppercase tracking-wider">
-                KI gestützter Versicherungscheck
-              </span>
+            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-2">
+              <span className="text-xs font-semibold tracking-wider">KI-Versicherungscheck</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Welche <span className="bg-orange-500 px-1 xs:px-1.5 lg:px-2">Versicherung</span>{' '}
               brauchst du wirklich?
             </h1>
-            <p className="text-lg text-white/80 mb-8 max-w-lg">
+
+            <p className="text-lg text-white/90 mb-8 max-w-lg">
               In wenigen Minuten findest du heraus, welche Versicherungen zu deinem Leben passen.
               Keine Anmeldung, keine E-Mail.
             </p>
@@ -28,7 +27,7 @@ export default function HomePage() {
             </div>
             <div className="flex gap-6 text-sm">
               <span className="flex gap-2">
-                <Zap className="w-5 h-5 text-orange-500" /> Ergebnis in wenigen Minuten
+                <Zap className="w-5 h-5 text-orange-500" /> Schnell & Einfach
               </span>
               <span className="flex gap-2">
                 <Euro className="w-5 h-5 text-blue-500" /> 100% kostenlos
