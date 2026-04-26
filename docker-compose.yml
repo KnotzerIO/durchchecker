@@ -2,10 +2,10 @@ services:
   app:
     build: .
     ports:
-      - '3000:3000'
+      - '${PORT:-3000}:3000'
     environment:
       NODE_ENV: production
-      DATABASE_URL: postgresql://myapp:myapp@db:5432/myapp
+      DATABASE_URL: postgresql://${POSTGRES_USER:-durchchecker}:${POSTGRES_PASSWORD:-durchchecker}@db:5432/${POSTGRES_DB:-durchchecker}
     depends_on:
       db:
         condition: service_healthy
@@ -14,13 +14,13 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: myapp
-      POSTGRES_PASSWORD: myapp
-      POSTGRES_DB: myapp
+      POSTGRES_USER: ${POSTGRES_USER:-durchchecker}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-durchchecker}
+      POSTGRES_DB: ${POSTGRES_DB:-durchchecker}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U myapp']
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-durchchecker}']
       interval: 10s
       timeout: 5s
       retries: 5
