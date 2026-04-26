@@ -16,8 +16,36 @@ export default function RootLayout() {
       <main>
         <Outlet />
       </main>
-      <footer className="border-t border-gray-200 bg-white px-4 py-3 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} durchchecker
+      <footer className="border-t border-slate-700 bg-slate-800 text-slate-400">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+            <img
+              src={logoHorizontal}
+              alt="Durchchecker"
+              className="h-6 brightness-0 invert opacity-70"
+            />
+            <div className="flex items-center gap-6 text-sm">
+              <a
+                href="https://github.com/KnotzerIO/durchchecker"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                GitHub
+              </a>
+              <a href="/impressum" className="hover:text-white transition-colors">
+                Impressum
+              </a>
+              <a href="/datenschutz" className="hover:text-white transition-colors">
+                Datenschutz
+              </a>
+            </div>
+          </div>
+          <div className="border-t border-slate-700 pt-4 text-center text-xs text-slate-600">
+            &copy; {new Date().getFullYear()} durchchecker <br />
+            Ein Studentenprojekt der FH Campus Wien
+          </div>
+        </div>
       </footer>
     </div>
   )
