@@ -11,7 +11,7 @@ async function request<T>(method: HttpMethod, path: string, body?: unknown): Pro
   const res = await fetch(`${BASE_URL}${path}`, {
     method,
     headers,
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    body: body !== undefined ? JSON.stringify(body) : null,
   })
 
   if (!res.ok) {
