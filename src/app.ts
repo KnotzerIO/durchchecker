@@ -7,7 +7,16 @@ import { apiRouter } from './routes/index.js'
 
 const app = express()
 
-app.use(helmet())
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'connect-src': ["'self'", process.env['VITE_STRAPI_URL'] ?? ''],
+      },
+    },
+  }),
+)
 app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
