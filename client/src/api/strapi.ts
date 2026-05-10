@@ -1,4 +1,8 @@
-const BASE = import.meta.env.VITE_STRAPI_URL as string
+const strapiUrl = import.meta.env.VITE_STRAPI_URL
+if (typeof strapiUrl !== 'string' || strapiUrl.trim() === '') {
+  throw new Error('Missing required environment variable: VITE_STRAPI_URL')
+}
+const BASE = strapiUrl
 
 export interface StrapiContent {
   content: string
