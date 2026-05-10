@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import logoHorizontal from '../assets/logo-full.svg'
 import Button from '../components/Button'
 
@@ -14,12 +14,12 @@ export default function RootLayout() {
           </Button>
         </div>
       </header>
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
       <footer className="border-t border-slate-700 bg-slate-800 text-slate-400">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
             <img
               src={logoHorizontal}
               alt="Durchchecker"
@@ -34,12 +34,12 @@ export default function RootLayout() {
               >
                 GitHub
               </a>
-              <a href="/impressum" className="hover:text-white transition-colors">
+              <Link to="/impressum" className="hover:text-white transition-colors">
                 Impressum
-              </a>
-              <a href="/datenschutz" className="hover:text-white transition-colors">
+              </Link>
+              <Link to="/datenschutz" className="hover:text-white transition-colors">
                 Datenschutz
-              </a>
+              </Link>
             </div>
           </div>
           <div className="border-t border-slate-700 pt-4 text-center text-xs text-slate-600">
